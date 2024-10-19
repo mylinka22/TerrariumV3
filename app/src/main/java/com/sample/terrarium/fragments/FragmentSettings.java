@@ -3,6 +3,7 @@ package com.sample.terrarium.fragments;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,6 +56,7 @@ public class FragmentSettings extends Fragment {
         vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);
 
         buttonSaveIP.setOnClickListener(v -> {
+            vibrate();
             String ip = edittextViewIP.getText().toString();
             saveIPToSharedPreferences(ip);
 
@@ -67,7 +69,7 @@ public class FragmentSettings extends Fragment {
 
 
         btnconfirm1.setOnClickListener(v -> {
-
+            vibrate();
             String id = "-1";
 
             switch (spinner1.getSelectedItem().toString()){
@@ -91,6 +93,7 @@ public class FragmentSettings extends Fragment {
 
 
         btncancel1.setOnClickListener(v -> {
+            vibrate();
             NetworkUtils networkUtils = new NetworkUtils(new OkHttpClient(), savedIP);
             for (int i = 0; i <= 2; i++) {
                 respons(networkUtils, "relay?id=" + i + "&hourin=-1&minin=-1&hourout=-1&minout=-1");
@@ -100,6 +103,7 @@ public class FragmentSettings extends Fragment {
 
 
         btnconfirm2.setOnClickListener(v -> {
+            vibrate();
 
             String id = "-1";
 
@@ -124,6 +128,7 @@ public class FragmentSettings extends Fragment {
 
 
         btncancel2.setOnClickListener(v -> {
+            vibrate();
             NetworkUtils networkUtils = new NetworkUtils(new OkHttpClient(), savedIP);
             for (int i = 0; i <= 2; i++) {
                 respons(networkUtils, "everyhour?id="+i+"&status=0&timein=-1&timeout=-1&time=-1");
@@ -171,6 +176,10 @@ public class FragmentSettings extends Fragment {
             }
         });
 
+    }
+
+    private void vibrate() {
+        vibrator.vibrate(VibrationEffect.createOneShot(100, VibrationEffect.DEFAULT_AMPLITUDE));
     }
 
 }

@@ -37,7 +37,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="10:00 - 22:00"
+            android:text="Не задано"
             />
 
     </LinearLayout>
@@ -64,7 +64,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="10:00 - 22:00"
+            android:text="Не задано"
             />
     </LinearLayout>
 
@@ -91,7 +91,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="10:00 - 22:00"
+            android:text="Не задано"
             />
     </LinearLayout>
 
@@ -129,7 +129,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="10:00 - 22:00 / 20"
+            android:text="Не задано"
             />
 
     </LinearLayout>

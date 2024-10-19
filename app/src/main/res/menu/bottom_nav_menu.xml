@@ -5,6 +5,10 @@
         android:icon="@drawable/ic_home"
         android:title="Главная" />
     <item
+        android:id="@+id/navigation_feeder"
+        android:icon="@drawable/ic_food"
+        android:title="Кормушка" />
+    <item
         android:id="@+id/navigation_graf"
         android:icon="@drawable/ic_graf"
         android:title="Графики" />

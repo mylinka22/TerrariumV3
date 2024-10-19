@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sample.terrarium.fragments.FragmentFeeder;
 import com.sample.terrarium.fragments.FragmentGraf;
 import com.sample.terrarium.fragments.FragmentHome;
 import com.sample.terrarium.fragments.FragmentSettings;
@@ -33,11 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String savedIP = sharedPreferences.getString("savedIP", "");
-        if (savedIP.isEmpty()) {
-            System.out.println(123213);
-
-        }
-
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -58,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.navigation_tasks:
                         selectedFragment = new FragmentTasks();
+                        break;
+                    case R.id.navigation_feeder:
+                        selectedFragment = new FragmentFeeder();
                         break;
                 }
 
